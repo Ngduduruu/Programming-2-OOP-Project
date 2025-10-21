@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import java.net.URL?>
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeamDashboardController">
+    <ImageView fitWidth="540" fitHeight="300">
+        <image>
+            <Image url="/view/image/banner.png"/>
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" prefWidth="540.0" spacing="10">
+        <Separator/>
+        <Label fx:id="teamLbl" styleClass="label"/>
+        <Separator/>
+    </VBox>
+   
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Sign a new player: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="playerNameTf" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Button styleClass="button" defaultButton="true" prefWidth="100" text="Sign" fx:id="signBtn" disable="true" onAction="#handleSign" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    </GridPane>
+    
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <TableView fx:id="playersTv" prefWidth="300.0" prefHeight="400.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <columns>
+                <TableColumn fx:id="nameClm" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="positionClm" text="Position" prefWidth="150"/>
+            </columns>
+        </TableView>
+    
+        <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER">
+            <Label text="Active Team" styleClass="activeTeamHeader"/> 
+            
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <!-- Jersey 1 - Top Center -->
+                <ImageView fx:id="jersey1Iv" fitWidth="60" fitHeight="60" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">    
+                </ImageView>
+
+                <!-- Jersey 2 - Middle Left -->
+                <ImageView fx:id="jersey2Iv" fitWidth="60" fitHeight="60" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    
+                </ImageView>
+
+                <!-- Jersey 3 - Middle Center -->
+                <ImageView fx:id="jersey3Iv" fitWidth="60" fitHeight="60" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                </ImageView>
+
+                <!-- Jersey 4 - Middle Right -->
+                <ImageView fx:id="jersey4Iv" fitWidth="60" fitHeight="60" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                </ImageView>
+
+                <!-- Jersey 5 - Bottom Center -->
+                <ImageView fx:id="jersey5Iv" fitWidth="60" fitHeight="60" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                </ImageView>
+            </GridPane>
+        </VBox>
+    </GridPane>
+    
+    <GridPane vgap="10" alignment="CENTER">
+        <Button styleClass="button" prefWidth="270" text="Unsign" fx:id="unsignBtn" disable="true" onAction="#handleUnsign" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Button styleClass="button" prefWidth="270" text="Close" fx:id="closeBtn" onAction="#handleClose" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+    
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>

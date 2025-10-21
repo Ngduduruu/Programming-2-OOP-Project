@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SwapController">
+    <ImageView fitWidth="540" fitHeight="300">
+        <image>
+            <Image url="/view/image/banner.png"/>
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" prefWidth="540.0" spacing="10">
+        <Separator/>
+        <Label fx:id="title" text="Swap Team" styleClass="heading"/>
+        <Separator/>
+    </VBox>
+
+    <ListView fx:id="teamsLv" prefWidth="300.0" prefHeight="400.0"/>
+
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="100" HBox.hgrow="ALWAYS" text="Swap" fx:id="swapBtn" onAction="#handleSwap" disable="true"/>
+        <Button styleClass="button" prefWidth="100" HBox.hgrow="ALWAYS" text="Close" fx:id="closeBtn" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ErrorController">
+    <ImageView fitWidth="540" fitHeight="300">
+        <image>
+            <Image url="/view/image/banner.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+    <Label fx:id="errorLbl" styleClass="error" text="" prefHeight="50"/>
+    <Separator/>
+    <Label fx:id="messageLbl" styleClass="label" text=""/>
+    <Separator/>
+
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="540" HBox.hgrow="ALWAYS" text="Close" fx:id="closeBtn" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+</VBox>
